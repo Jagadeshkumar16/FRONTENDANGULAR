@@ -1,0 +1,60 @@
+/* You can add global styles to this file, and also import other style files */
+// @import '~@angular/material/theming';
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+// @import '~@angular/material/prebuilt-themes/indigo-pink.css';
+// @import '~@angular/material/theming';
+
+// // Include the default Angular Material theme
+// @include mat-core();
+
+// // Include the default Angular Material theme palette
+// $primary: mat-palette($mat-indigo);
+// $accent: mat-palette($mat-pink, A200, A100, A400);
+// $warn: mat-palette($mat-red);
+
+// // Create the theme using the default palette
+// $theme: mat-light-theme($primary, $accent, $warn);
+
+// // Apply the theme to your application
+// @include angular-material-theme($theme);
+
+
+.auth-card{
+    background: #c31432;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #240b36, #c31432);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #240b36, #c31432); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius: 5px;
+    box-shadow: 0px 0px 30px #f7f7f7;
+  }
+  label{
+    color: #fff;
+    font-weight: 700;
+  }
+  .user-image{
+    height: 70px;
+  }
+  .auth-avatar{
+    text-align: center;
+    margin-top: -50px;
+  }
+  .auth{
+    margin-top: 35px;
+    border: none;
+    border-radius: 6px;
+  }
+  .btn-my{
+    background-color: #d39e00;
+    border-color: #d39e00;
+    color: #fff;
+  }
+  .simple-keyboard {
+    max-width: 850px;
+  }
+  button{
+    background-color:#fff !important;
+    outline: none;
+
+  }
+  
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

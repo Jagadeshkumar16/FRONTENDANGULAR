@@ -1,0 +1,26 @@
+.login{
+    color: #fff;
+  }
+  .login a{
+    color: #d39e00;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  @keyframes slide {
+    0% {
+      background-image:url('../../assets/images/life1login.jpg'); /* Start image */
+    }
+    50% {
+      background-image: url('../../assets/images/enviornment.png'); /* Middle image */
+    }
+    100% {
+      background-image: url('../../assets/images/animals.jpg'); /* End image */
+    }
+  }
+  
+  .planet-login {
+    animation: slide 10s linear infinite; /* Adjust timing and easing as needed */
+    background-size: cover;
+    background-position: center;
+    height:100vh;
+}
