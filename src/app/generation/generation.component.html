@@ -1,0 +1,38 @@
+<div class="container-fluid d-flex align-items-center justify-content-center custom-container">
+    <div class="col-md-8">
+    <mat-card class="custom-card">
+        <mat-card-header>
+            <mat-card-title>Population :{{organismCount}}</mat-card-title>
+            <mat-card-title>Species in my Planet</mat-card-title>
+          </mat-card-header>
+    <table mat-table class="custom-table-header" [dataSource]="speciesData">
+        
+        <ng-container matColumnDef="species">
+          <th mat-header-cell *matHeaderCellDef> Species </th>
+          <td mat-cell *matCellDef="let element"> {{element.species}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="count">
+          <th mat-header-cell *matHeaderCellDef> Count </th>
+          <td mat-cell *matCellDef="let element"> {{element.count}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="eaten">
+          <th mat-header-cell *matHeaderCellDef> eaten </th>
+          <td mat-cell *matCellDef="let element"> {{element.eaten}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="died">
+          <th mat-header-cell *matHeaderCellDef> died </th>
+          <td mat-cell *matCellDef="let element"> {{element.died}} </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="['species', 'count','eaten','died']"></tr>
+      
+        
+        <tr mat-row *matRowDef="let row; columns: ['species', 'count','eaten','died']"></tr>
+      </table>
+    </mat-card>
+    </div>
+</div>
+ 

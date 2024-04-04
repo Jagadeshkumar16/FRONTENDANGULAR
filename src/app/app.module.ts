@@ -16,13 +16,30 @@ import { MatCommonModule } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { MatCardModule } from '@angular/material/card';
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { ReproductionComponent } from './reproduction/reproduction.component';
+import { GenerationComponent } from './generation/generation.component';
+import { MatTableModule } from '@angular/material/table';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FeedingComponent } from './feeding/feeding.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { EnviornmentComponent } from './enviornment/enviornment.component';
+import { HighchartsChartModule } from 'highcharts-angular';
+import { SimulationComponent } from './simulation/simulation.component';
 @NgModule({
   declarations: [
     AppComponent,
     PlanetLoginComponent,
     PlanetRegComponent,
     PlanetHomeComponent,
-    SidenavComponent
+    SidenavComponent,
+    ReproductionComponent,
+    GenerationComponent,
+    FeedingComponent,
+    EnviornmentComponent,
+    SimulationComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +49,14 @@ import { MatListModule } from '@angular/material/list';
     MatToolbarModule,
     MatIconModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatCardModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    MatTableModule,
+    BrowserAnimationsModule,
+    MatProgressSpinnerModule,
+    HighchartsChartModule
   ],
   providers: [
     provideAnimationsAsync()

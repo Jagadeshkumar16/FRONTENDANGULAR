@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { PlanetService } from '../planet.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-planet-login',
@@ -12,7 +13,7 @@ export class PlanetLoginComponent {
     password: ''
   };
   message: any;
-  constructor(private planetService:PlanetService){}
+  constructor(private planetService:PlanetService,private routes:Router){}
   login(userData: any) {
     const data = {
       username: userData.email,
@@ -25,8 +26,9 @@ export class PlanetLoginComponent {
       (response: any) => {
         console.log(response,'login success');
 
-        if (response['Status'] === 200) {
+        if (response && response['message'] === 'success') {
           this.message = 'Logged in successfully';
+          this.routes.navigate(['/planethome']);
         }
       },
       (error: any) => {

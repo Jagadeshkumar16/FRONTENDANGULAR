@@ -29,7 +29,19 @@ export class PlanetService {
   }
   
   register(regObj:any){
-    return this.http.post<any>(`${this.baseUrl}/register`, { regObj})
+    return this.http.post<any>(`${this.baseUrl}user/`,regObj,this.requestOptions)
+  }
+  reproduction(reObj:any){
+    return this.http.post<any>(`${this.baseUrl}organism/`, reObj,this.requestOptions)
+  }
+  getorganisms(){
+    return this.http.get(this.baseUrl+'organism/',this.requestOptions)
+  }
+  deleteOrganism(id:any){
+    return this.http.delete(this.baseUrl+'organism/'+id+'/',this.requestOptions);
+  }
+  simulate(action:any){
+    return this.http.get(this.baseUrl+'organismsimulation/?action='+action,this.requestOptions);
   }
 }
  

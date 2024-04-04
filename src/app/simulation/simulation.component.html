@@ -1,0 +1,125 @@
+<ng-template [ngIf]="displayName==='simulation'">
+    <div class="col-md-2 mx-auto mt-5 justify-content-center" style="margin-left:50%;">
+                    
+        <button mat-button  color="warn" class="commonbtn" (click)="start()"> Start</button>
+    </div>
+<div class="container-fluid d-flex align-items-center justify-content-center custom-container ">
+    <div class="col-md-8">
+        <mat-card class="custom-card">
+            <mat-card-header class="mx-auto">
+                <mat-card-title>Simulation</mat-card-title>
+            </mat-card-header>
+            <div class="row">
+            <div class="row ">
+              
+               
+            </div>
+            <div class="row  mt-5">
+                <ul>
+                    <!-- <li><P>Note:<span>For Every 10 secs one Organism is eating another Organism</span></P></li> -->
+                </ul>
+            </div>
+            <!--<div class="row align-items-cneter justify-content-center">
+                <div class="col-md-8 font-weight-bold fs-6">Human Remaining : {{humanCount}}</div>
+                <div class="col-md-4 font-weight-bold fs-6">Cells Remaining : {{cellCount}}</div>
+                <div class="col-md-8 font-weight-bold fs-6">Eagles Remaining: {{egaleCount}}</div>
+                <div class="col-md-4 font-weight-bold fs-6">Pigeon Remaining: {{pigeonCount}}</div>
+                <div class="col-md-8 font-weight-bold fs-6">Lion Remaining: {{lionCount}}</div>
+                <div class="col-md-4 font-weight-bold fs-6">Giraffe Remaining : {{giraffeCount}}</div>
+                
+            </div>
+            <div class="row  mt-5 align-items-cneter justify-content-center">
+                <div class="col-md-8 font-weight-bold fs-6">Human Eats Cell</div>
+                <div class="col-md-4 font-weight-bold fs-6">Lion Eats Human and Giraffee</div>
+                <div class="col-md-8 font-weight-bold fs-6">Eagles Eats Pigoen</div>
+                <div class="col-md-4 font-weight-bold fs-6">Pigeon Eats cell</div>
+                <div class="col-md-8 font-weight-bold fs-6">Giraffe Eats cell</div>
+                <div class="col-md-4 font-weight-bold fs-6"></div>
+            </div>-->
+            <div class="row align-items-cneter justify-content-center">
+                <!-- <div class="col-md-12"><strong>Total Reproduced: {{ reproducedCnt }}</strong></div>
+                <div *ngFor="let item of reproduce | keyvalue" class="col-md-2">{{item.key}}: {{item.value}}</div>
+            </div>
+            <hr>
+            <div class="row align-items-cneter justify-content-center">
+                <div class="col-md-12 font-weight-bold"><strong>Total Hunted: {{ huntedCnt }}</strong></div>
+                <div *ngFor="let item of hunted | keyvalue" class="col-md-2">{{item.key}}: {{item.value}}</div> -->
+                <div class="table-container"> <!-- Adding left margin -->
+                    <table mat-table class="custom-table-header" [dataSource]="speciesData" style="width: 100%; height: 300px; ml-8">
+                      <ng-container matColumnDef="species">
+                        <th mat-header-cell *matHeaderCellDef>Species</th>
+                        <td mat-cell *matCellDef="let element">{{element.species}}</td>
+                      </ng-container>
+                      <ng-container matColumnDef="count">
+                        <th mat-header-cell *matHeaderCellDef>Count</th>
+                        <td mat-cell *matCellDef="let element">{{element.count}}</td>
+                      </ng-container>
+                      <ng-container matColumnDef="huntedoreaten">
+                        <th mat-header-cell *matHeaderCellDef>hunted or eaten</th>
+                        <td mat-cell *matCellDef="let element">{{element.huntedoreaten}}</td>
+                      </ng-container>
+                      <ng-container matColumnDef="totaldied">
+                        <th mat-header-cell *matHeaderCellDef>Total died</th>
+                        <td mat-cell *matCellDef="let element">{{element.totaldied}}</td>
+                      </ng-container>
+
+                      <tr mat-header-row *matHeaderRowDef="['species', 'count','huntedoreaten','totaldied']"></tr>
+                      <tr mat-row *matRowDef="let row; columns: ['species', 'count','huntedoreaten','totaldied']"></tr>
+                    </table>
+                  </div>
+            </div>
+        </div>
+       </mat-card>
+    </div>
+  </div>
+</ng-template>
+<ng-template [ngIf]="displayName === 'graph'">
+    <div class="col-md-2 mx-auto mt-5 justify-content-center">
+                    
+        <button mat-button color="warn" class="commonbtn" (click)="stopInterval()"> Stop</button>
+    </div>
+    <div class="container-fluid overflow-auto d-flex justify-content-center custom-container custom-card">
+        
+        <div class="row">
+            <div class="col-md-6">
+              <div id="containerbar"></div>
+            </div>
+            <div class="col-md-6">
+              <div id="containerline"></div>
+            </div>
+          </div>
+      <div class="row mt-4"> 
+        <div class="col-md-10 offset-md-1"> 
+        
+          <div class="table-container"> 
+            <table mat-table class="custom-table-header" [dataSource]="speciesData" style="width: 100%; height: 300px; ml-8">
+              <ng-container matColumnDef="species">
+                <th mat-header-cell *matHeaderCellDef>Species</th>
+                <td mat-cell *matCellDef="let element">{{element.species}}</td>
+              </ng-container>
+              <ng-container matColumnDef="count">
+                <th mat-header-cell *matHeaderCellDef>Count</th>
+                <td mat-cell *matCellDef="let element" style="font-size: 24px;">{{element.count}}</td>
+              </ng-container>
+              <!-- <ng-container matColumnDef="hunted">
+                <th mat-header-cell *matHeaderCellDef>Hunted/Eaten/Dead</th>
+                <td mat-cell *matCellDef="let element" style="font-size: 24px;">{{element.hunted}}</td>
+              </ng-container>
+              <ng-container matColumnDef="count">
+                <th mat-header-cell *matHeaderCellDef>Reproduced</th>
+                <td mat-cell *matCellDef="let element" style="font-size: 24px;">{{element.reproduced}}</td>
+              </ng-container> -->
+              <tr mat-header-row *matHeaderRowDef="['species', 'count']"></tr>
+              <tr mat-row *matRowDef="let row; columns: ['species', 'count']"></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+   
+    </div>
+  </ng-template>
+  
+  
+  
+  
+  

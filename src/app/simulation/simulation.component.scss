@@ -1,0 +1,28 @@
+.drop{
+    align-items: center;
+    // margin-left: 70px;
+    justify-content: center;
+}
+img {
+    width:500px;
+    height: 300px; 
+    margin-right: 8px; 
+ 
+  }
+.custom-card{
+    background-color:#fff;
+}
+.table-container{
+    margin-left:5%;
+}
+mat-header-cell{
+    background-color: coral;
+}
+.custom-table-header th {
+    background-color: green; 
+    color: white; 
+    font-weight: bold; 
+  }
+ .commonbtn{
+    background-color:orange;
+ } 

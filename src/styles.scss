@@ -51,10 +51,34 @@
     max-width: 850px;
   }
   button{
-    background-color:#fff !important;
+    // background-color:#fff !important;
     outline: none;
 
   }
+  .commonbtn{
+    width: 50% !important;
+    text-align: center;
+    background-color: #c31432;
+    color:#fff;
+    border-radius: 10px;
+    height: auto;
+
+  }
+  .custom-card {
+    min-height: 70vh; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  }
+  .custom-container {
+    height: calc(90vh - 100px); 
+    margin-top: 50px; 
+    overflow: hidden;
+  }
+  iframe{
+    height: calc(90vh - 100px); 
+    width:calc(70vw - 100px);
+  }
+
+
   
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

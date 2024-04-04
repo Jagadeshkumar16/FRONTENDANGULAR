@@ -1,0 +1,20 @@
+.card{
+    margin: 10px;
+}
+// .custom-card{
+//     overflow: scroll;
+// }
+.cardcontainer{
+    max-height: 300px;
+    overflow: 100px;
+}
+.custom-card{
+    background-color: aqua;
+}
+.card-title img {
+    width: 100px; /* Adjust the width of the icon */
+    height: 100px; /* Adjust the height of the icon */
+    margin-right: 8px; /* Add some spacing between the icon and text */
+    /* Add more styling properties as needed */
+  }
+  

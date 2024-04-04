@@ -1,8 +1,53 @@
 .home {
     background-image: url('../../assets/images/enviornment.png') !important;
-    background-size: cover; /* Adjust as needed */
-    background-position: center; /* Adjust as needed */
-    height: 100vh; /* Set the height of the component to match the viewport */
-    // display: flex;
-    // flex-direction: column;
+    background-size: cover; 
+    background-position: center; 
+    height: 100vh;
+    
   }
+  mat-card{
+    background-color: #fff !important;
+    // background: transparent;
+  }
+  .custom-card {
+    min-height: 70vh; 
+    background-color: #ededed !important;
+  }
+  .custom-container {
+    height: calc(90vh - 100px); 
+    margin-top: 50px; 
+  }
+  label{
+    color: #000;
+  }
+  button{
+    background-color: green !important;
+    color:#fff !important;
+    border-radius: 10px;
+  }
+  .logout{
+    background-color: blue !important; 
+    color:#fff
+  }
+  .home{
+    cursor: pointer;
+  }
+  img{
+    width:100px;
+    height:100px;
+  }
+  .bcard{
+    margin-left: 10%;
+    margin-top: 3%;
+  }
+  .hmbutton{
+    justify-content: space-between !important;
+    width:80% !important;
+    display: flex; 
+    text-align: center !important;
+    font-size: larger;
+    font-weight: 900;
+  }
+  // .wea{
+  //   margin: 50px;
+  // }

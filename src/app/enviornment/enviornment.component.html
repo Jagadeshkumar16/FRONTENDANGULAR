@@ -1,0 +1,101 @@
+
+
+<div >
+    <form  class="container-fluid d-flex align-items-center justify-content-center custom-container" (ngSubmit)="showenviornment()" >
+       <div class="col-md-8">
+         <mat-card class="container custom-card">
+           <div class="row">
+               <div class="col-md-3">
+                   <mat-card-header  >
+                   <mat-card-title class="align-item-center justify-content-center" >Enviornment</mat-card-title>
+                   <!-- <mat-card-subtitle>Start</mat-card-subtitle> -->
+                   </mat-card-header>
+               </div>
+           </div>  
+          
+           <div class="row align-items-cneter justify-content-center">
+             <div class="col-md-3">
+               <div class="form-group">
+                 
+                 <mat-form-field class="custom-mat-select" appearance="outline">
+                   <mat-label>Select WeatherType</mat-label>
+                   <mat-select id="organismType" [(ngModel)]="selectedWeatherType"  name="selectedWeatherType" >
+                     <mat-option value="Rainy">Rainy</mat-option>
+                     <mat-option value="Sunny">Sunny</mat-option>
+                     <mat-option value="Snowy">Snowy</mat-option>
+                     <mat-option value="Stormy">Stormy</mat-option>
+                     
+                     <!-- <mat-option value="Longevity and Iteroparity">Longevity and Iteroparity</mat-option> -->
+                   </mat-select>
+                 </mat-form-field>
+               </div>
+   
+               
+             </div>
+             <div class="col-md-3">
+             <div class="form-group ">
+                <!-- <label for="option2" class="col-md-3 col-form-label text-md-right">Select Option</label> -->
+                <div class=" ">
+                  <mat-form-field class="custom-mat-select " appearance="outline">
+                    <mat-select id="option2" [(ngModel)]="optionweather" name="optionweather">
+                      <mat-option *ngFor="let weather of updateweatherDropdown(selectedWeatherType)" [value]="weather">{{ weather }}</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+                </div>
+                <div class="col-md-3 justify-content-center">
+                
+                    <button mat-button color="warn" class="commonbtn"> Show Enviornment</button>
+                </div>
+              
+             </div>
+             
+              <div class="row align-items-cneter justify-content-center">
+                <div class="col-md-6">
+                    <ng-container *ngIf="weatherRainyDesertUrl">
+                        <img [src]="weatherRainyDesertUrl">
+                    </ng-container>
+                    <ng-container *ngIf="weatherRainyForestUrl">
+                        <img [src]="weatherRainyForestUrl">
+                    </ng-container>
+                    <ng-container *ngIf="weatherRainyMountainUrl">
+                        <img [src]="weatherRainyMountainUrl">
+                    </ng-container>
+                    <ng-container *ngIf="weatherSunnyDesertUrl">
+                        <img [src]="weatherSunnyDesertUrl">
+                    </ng-container>
+                    <ng-container *ngIf="weatherSunnyForestUrl">
+                        <img [src]="weatherSunnyForestUrl">
+                    </ng-container>
+                    <ng-container *ngIf="weatherSunnyMountainUrl">
+                        <img [src]="weatherSunnyMountainUrl">
+                    </ng-container>
+                    <ng-container *ngIf="weatherSnowyForestUrl">
+                        <img [src]="weatherSnowyForestUrl">
+                    </ng-container>
+                    <ng-container *ngIf="weatherSnowyMountainUrl">
+                        <img [src]="weatherSnowyMountainUrl">
+                    </ng-container>
+                    <ng-container *ngIf="weatherStormyForestUrl">
+                        <img [src]="weatherStormyForestUrl">
+                    </ng-container>
+                    <ng-container *ngIf="weatherStormyMountainUrl">
+                        <img [src]="weatherStormyMountainUrl">
+                    </ng-container>
+                    <ng-container *ngIf="weatherStormyDesertUrl">
+                        <img [src]="weatherStormyDesertUrl">
+                    </ng-container>
+                </div>
+              </div> 
+            
+           
+          
+           
+         </mat-card>
+       </div>
+   </form>
+   
+     </div>
+     
+   
