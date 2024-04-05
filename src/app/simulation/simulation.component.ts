@@ -16,7 +16,7 @@ import { MapType } from '@angular/compiler';
 export class SimulationComponent {
   displayedColumns: string[] = ['Name', 'Count'];
   //speciesData: { species: string; count: number; year: string; hunted: number; reproduced: number; }[] = [];
-  speciesData: { species: string; count: number; year: string; }[] = [];
+  speciesData: { species: string; count: number; year?: string; }[] = [];
   organisms: any[] = [];
   organismCount: number = 0;
   simIntervalId:any;
@@ -35,7 +35,7 @@ export class SimulationComponent {
   reproducedCnt=0;
   huntedCnt=0;
   species = ['Human', 'Lion', 'Giraffee', 'Eagle', 'Pigeon', 'cell'];
-
+  speciesCounts: Map<string, number> = new Map<string, number>(); 
   constructor(private planetService: PlanetService) {}
 
   ngOnInit() {
@@ -63,7 +63,31 @@ export class SimulationComponent {
           this.reproduce.set(r, this.reproduce.get(r)+1);
         });
         this.reproducedCnt += response['simulated'].length;
-        console.log(this.reproduce);
+        console.log(this.reproduce,"reproduce");
+        
+        const data = response.data; // Extract data array from the response
+      const simulated = response.simulated; // Extract simulated array from the response
+
+      // Count occurrences of each species
+      const speciesCounts: Map<string, number> = new Map<string, number>();
+      data.forEach((item: any) => {
+        const species = item.species;
+        speciesCounts.set(species, (speciesCounts.get(species) || 0) + 1);
+      });
+
+      // Calculate count of reproduced species
+      const reproducedCounts: Map<string, number> = new Map<string, number>();
+      simulated.forEach((species: string) => {
+        reproducedCounts.set(species, (reproducedCounts.get(species) || 0) + 1);
+      });
+
+      // Combine species counts and reproduced counts
+      this.speciesData = Array.from(speciesCounts.entries()).map(([species, count]) => ({
+        species,
+        count,
+        reproduced: reproducedCounts.get(species) || 0 ,// Add reproduced count
+        year:''
+      }));
       });
       this.getAllorganism();
       this.updateChart();
@@ -292,6 +316,7 @@ createChartline() {
   
   
   getAllorganism() {
+    console.log('spieces')
     this.planetService.getorganisms().subscribe(
       (response: any) => {
         this.organisms = response;

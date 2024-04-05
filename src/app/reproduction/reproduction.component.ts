@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { PlanetService } from '../planet.service';
-import { response } from '../../../node_modules copy/@types/express';
+import { response } from '../../../node_modules/@types/express';
 
 @Component({
   selector: 'app-reproduction',

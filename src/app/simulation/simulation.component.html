@@ -101,16 +101,12 @@
                 <th mat-header-cell *matHeaderCellDef>Count</th>
                 <td mat-cell *matCellDef="let element" style="font-size: 24px;">{{element.count}}</td>
               </ng-container>
-              <!-- <ng-container matColumnDef="hunted">
-                <th mat-header-cell *matHeaderCellDef>Hunted/Eaten/Dead</th>
-                <td mat-cell *matCellDef="let element" style="font-size: 24px;">{{element.hunted}}</td>
-              </ng-container>
-              <ng-container matColumnDef="count">
+              <ng-container matColumnDef="reproduced">
                 <th mat-header-cell *matHeaderCellDef>Reproduced</th>
                 <td mat-cell *matCellDef="let element" style="font-size: 24px;">{{element.reproduced}}</td>
-              </ng-container> -->
-              <tr mat-header-row *matHeaderRowDef="['species', 'count']"></tr>
-              <tr mat-row *matRowDef="let row; columns: ['species', 'count']"></tr>
+              </ng-container>
+              <tr mat-header-row *matHeaderRowDef="['species', 'count', 'reproduced']"></tr>
+              <tr mat-row *matRowDef="let row; columns: ['species', 'count', 'reproduced']"></tr>
             </table>
           </div>
         </div>
