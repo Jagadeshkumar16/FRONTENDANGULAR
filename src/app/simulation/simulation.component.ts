@@ -16,12 +16,12 @@ import { MapType } from '@angular/compiler';
 export class SimulationComponent {
   displayedColumns: string[] = ['Name', 'Count'];
   //speciesData: { species: string; count: number; year: string; hunted: number; reproduced: number; }[] = [];
-  speciesData: { species: string; count: number; year?: string; }[] = [];
+  speciesData: { species: string; count: number; year: string; }[] = [];
   organisms: any[] = [];
   organismCount: number = 0;
   simIntervalId:any;
   repIntervalId:any;
-  giraffeCount:any;
+  giraffeeCount:any;
   humanCount:any;
   lionCount:any;
   egaleCount:any;
@@ -34,8 +34,8 @@ export class SimulationComponent {
   hunted: any;
   reproducedCnt=0;
   huntedCnt=0;
-  species = ['Human', 'Lion', 'Giraffee', 'Eagle', 'Pigeon', 'cell'];
-  speciesCounts: Map<string, number> = new Map<string, number>(); 
+  species = ['Human', 'Lion', 'Giraffee', 'Eagle', 'Pigeon', 'Cell'];
+
   constructor(private planetService: PlanetService) {}
 
   ngOnInit() {
@@ -64,30 +64,6 @@ export class SimulationComponent {
         });
         this.reproducedCnt += response['simulated'].length;
         console.log(this.reproduce,"reproduce");
-        
-        const data = response.data; // Extract data array from the response
-      const simulated = response.simulated; // Extract simulated array from the response
-
-      // Count occurrences of each species
-      const speciesCounts: Map<string, number> = new Map<string, number>();
-      data.forEach((item: any) => {
-        const species = item.species;
-        speciesCounts.set(species, (speciesCounts.get(species) || 0) + 1);
-      });
-
-      // Calculate count of reproduced species
-      const reproducedCounts: Map<string, number> = new Map<string, number>();
-      simulated.forEach((species: string) => {
-        reproducedCounts.set(species, (reproducedCounts.get(species) || 0) + 1);
-      });
-
-      // Combine species counts and reproduced counts
-      this.speciesData = Array.from(speciesCounts.entries()).map(([species, count]) => ({
-        species,
-        count,
-        reproduced: reproducedCounts.get(species) || 0 ,// Add reproduced count
-        year:''
-      }));
       });
       this.getAllorganism();
       this.updateChart();
@@ -104,7 +80,7 @@ export class SimulationComponent {
       });
       this.getAllorganism();
       this.updateChart();
-    }, 10000);
+    }, 5000);
   }
   
   stopInterval(): void {
@@ -134,6 +110,12 @@ const h = this.hunted;
     this.updateChart();
     this.updateLineChart();
     // this.createChart();
+  }
+  getHuntedCount(species: string): number {
+    return this.hunted.get(species) || 0;
+  }
+  getReproducedCount(species: string): number {
+    return this.reproduce.get(species) || 0;
   }
   updateChart(): void {
     if (this.chart) {
@@ -321,8 +303,8 @@ createChartline() {
       (response: any) => {
         this.organisms = response;
         this.organismCount = this.organisms.length;
-       this.giraffeCount = this.organisms.filter(organism => organism.species === 'Giraffee').length;
-        console.log(this.giraffeCount,"gcount");
+       this.giraffeeCount = this.organisms.filter(organism => organism.species === 'Giraffee').length;
+        console.log(this.giraffeeCount,"gcount");
         this.humanCount = this.organisms.filter(organism => organism.species === 'Human').length;
         console.log(this.humanCount,"hcount");
         this.lionCount = this.organisms.filter(organism => organism.species === 'Lion').length;
@@ -331,7 +313,7 @@ createChartline() {
         console.log(this.egaleCount,"eacount");
         this.pigeonCount = this.organisms.filter(organism => organism.species === 'Pigeon').length;
         console.log(this.pigeonCount,"picount");
-        this.cellCount = this.organisms.filter(organism => organism.species === 'cell').length;
+        this.cellCount = this.organisms.filter(organism => organism.species === 'Cell').length;
         console.log(this.cellCount,"cellcount");
         this.calculateSpeciesCount();
         console.log(response,'spieces')

@@ -14,10 +14,10 @@
       
         <ng-container matColumnDef="count">
           <th mat-header-cell *matHeaderCellDef> Count </th>
-          <td mat-cell *matCellDef="let element"> {{element.count}} </td>
+          <td mat-cell *matCellDef="let element" style="font-size: 24px;"> {{element.count}} </td>
         </ng-container>
 
-        <ng-container matColumnDef="eaten">
+        <!-- <ng-container matColumnDef="eaten">
           <th mat-header-cell *matHeaderCellDef> eaten </th>
           <td mat-cell *matCellDef="let element"> {{element.eaten}} </td>
         </ng-container>
@@ -25,12 +25,12 @@
         <ng-container matColumnDef="died">
           <th mat-header-cell *matHeaderCellDef> died </th>
           <td mat-cell *matCellDef="let element"> {{element.died}} </td>
-        </ng-container>
+        </ng-container> -->
       
-        <tr mat-header-row *matHeaderRowDef="['species', 'count','eaten','died']"></tr>
+        <tr mat-header-row *matHeaderRowDef="['species', 'count']"></tr>
       
         
-        <tr mat-row *matRowDef="let row; columns: ['species', 'count','eaten','died']"></tr>
+        <tr mat-row *matRowDef="let row; columns: ['species', 'count']"></tr>
       </table>
     </mat-card>
     </div>

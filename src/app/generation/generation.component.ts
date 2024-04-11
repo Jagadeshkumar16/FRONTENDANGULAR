@@ -46,6 +46,7 @@ export class GenerationComponent {
         this.organisms = response;
         this.organismCount = this.organisms.length;
         this.calculateSpeciesCount();
+        console.log( this.organismCount,"all count");
       }
     );
   }
