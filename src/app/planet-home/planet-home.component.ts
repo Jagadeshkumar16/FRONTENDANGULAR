@@ -14,13 +14,10 @@ export class PlanetHomeComponent {
   omnivorousOptions: string[] = ['Option M', 'Option N', 'Option O'];
   selectedOrganismType: string = '';
   displayName='home';
-  // displayName='simulate';
   constructor(private routes:Router){
 
   }
-  toggleSidenav(){
-    
-  }
+
   getOptions(organismType: string): string[] {
     switch (organismType) {
       case 'Land':

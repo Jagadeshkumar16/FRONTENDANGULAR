@@ -32,7 +32,7 @@ export class PlanetLoginComponent {
         }
       },
       (error: any) => {
-        console.error(error); // Handle error response
+        console.error(error); 
       }
     );
   }

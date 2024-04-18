@@ -7,7 +7,7 @@
             <div class="col-md-12">
                 <mat-card-header  >
                 <mat-card-title class="align-item-center justify-content-center" >Reproduction</mat-card-title>
-                <!-- <mat-card-subtitle>Start</mat-card-subtitle> -->
+                
                 </mat-card-header>
             </div>
         </div>  
@@ -25,7 +25,7 @@
                   <mat-option value="Eagle">Eagle</mat-option>
                   <mat-option value="Pigeon">Pigeon</mat-option>
                   <mat-option value="Cell">Cell</mat-option>
-                  <!-- <mat-option value="Longevity and Iteroparity">Longevity and Iteroparity</mat-option> -->
+                 
                 </mat-select>
               </mat-form-field>
             </div>
@@ -70,25 +70,12 @@
                   <button  type="button" color="warn" (click)="deleteOrganism(organism.id)">
                     <mat-icon>delete</mat-icon>
                   </button>
-                  <!-- Add more fields as needed -->
+                  
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <!-- <div class="row">
-        <div class="col-md-6"> 
-          <div class="form-group">
-            <label for="option2">Select Option</label>
-            <mat-form-field class="custom-mat-select">
-              <mat-select id="option2">
-                <mat-option *ngFor="let option of getOptions(selectedOrganismType)" [value]="option">{{ option }}</mat-option>
-              </mat-select>
-            </mat-form-field>
-          </div>
-        </div>
-        </div> -->
-        
       </mat-card>
     </div>
 </form>

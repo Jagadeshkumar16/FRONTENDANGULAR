@@ -19,7 +19,6 @@ export class FeedingComponent {
   Lion: string[] = ['Eat Deer', 'Eat Zebra','Chase Animals','Drink water'];
   Cow: string[] = ['Eat Grass', 'Gives Milk','Drink water'];
   Parrot: string[] = ['Fly', 'Eat fruits','Drink water'];
-  // OmnivorousOptions: string[] = ['Option M', 'Option N', 'Option O'];
   selectedOrganismType: string = '';
   food: number=0;
   work: number=0;
@@ -92,7 +91,7 @@ export class FeedingComponent {
         console.log('Total water drank:', this.totalWaterDrank);
       }
   
-      // Check if the human is sleeping
+      
       if (this.optionFood === 'Sleep') {
         this.hydrationLevel=0;
         this.work = 0;

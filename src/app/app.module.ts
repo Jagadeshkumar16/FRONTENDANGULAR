@@ -11,7 +11,7 @@ import { RouterModule } from '@angular/router';
 import { PlanetHomeComponent } from './planet-home/planet-home.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { SidenavComponent } from './planet_widgets/sidenav/sidenav.component';
+
 import { MatCommonModule } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -34,7 +34,6 @@ import { SimulationComponent } from './simulation/simulation.component';
     PlanetLoginComponent,
     PlanetRegComponent,
     PlanetHomeComponent,
-    SidenavComponent,
     ReproductionComponent,
     GenerationComponent,
     FeedingComponent,

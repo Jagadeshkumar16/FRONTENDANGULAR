@@ -1,17 +1,17 @@
 @keyframes slide {
     0% {
-      background-image:url('../../assets/images/life1login.jpg'); /* Start image */
+      background-image:url('../../assets/images/life1login.jpg'); 
     }
     50% {
-      background-image: url('../../assets/images/enviornment.png'); /* Middle image */
+      background-image: url('../../assets/images/enviornment.png'); 
     }
     100% {
-      background-image: url('../../assets/images/animals.jpg'); /* End image */
+      background-image: url('../../assets/images/animals.jpg');
     }
   }
   
   .planet-login {
-    animation: slide 10s linear infinite; /* Adjust timing and easing as needed */
+    animation: slide 10s linear infinite; 
     background-size: cover;
     background-position: center;
     height: 100vh;

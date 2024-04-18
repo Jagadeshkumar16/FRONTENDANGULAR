@@ -2,11 +2,7 @@ import { Component } from '@angular/core';
 import { PlanetService } from '../planet.service';
 import * as Highcharts from 'highcharts';
 import { MapType } from '@angular/compiler';
-// interface SpeciesData {
-//   species: string;
-//   count: number;
-//   year: string; // Add the 'year' property
-// }
+
 
 @Component({
   selector: 'app-simulation',
@@ -15,7 +11,7 @@ import { MapType } from '@angular/compiler';
 })
 export class SimulationComponent {
   displayedColumns: string[] = ['Name', 'Count'];
-  //speciesData: { species: string; count: number; year: string; hunted: number; reproduced: number; }[] = [];
+ 
   speciesData: { species: string; count: number; year: string; }[] = [];
   organisms: any[] = [];
   organismCount: number = 0;
@@ -109,7 +105,7 @@ const h = this.hunted;
     this.speciesData = Array.from(speciesMap).map(([species, count]) => ({ species, count, year: currentYear }));
     this.updateChart();
     this.updateLineChart();
-    // this.createChart();
+    
   }
   getHuntedCount(species: string): number {
     return this.hunted.get(species) || 0;
@@ -126,7 +122,7 @@ const h = this.hunted;
       this.chart.series[0].setData(chartData, true);
     } else {
       
-      // this.createChart();
+   
        this.createChartBar();
     }
   }
@@ -144,24 +140,14 @@ const h = this.hunted;
   }
   
 
-
- //bar graph
-
  createChartBar() {
   if (this.speciesData.length > 0) {
-    // const colors: { [key: string]: string } = {
-    //   'Human': '#4CAF50',
-    //   'Lion': '#FF9800',
-    //   'Giraffee': '#F44336',
-    //   'Eagle': '#009688',
-    //   'Pigeon': '#3F51B5',
-    //   'cell': '#000'
-    // };
+    
 
     const chartData = this.speciesData.map(dataPoint => ({
       name: dataPoint.species,
       y: dataPoint.count,
-      // color: colors[dataPoint.species] || '#000' 
+      
     }));
 
     this.chart = Highcharts.chart('containerbar', {
@@ -192,62 +178,6 @@ const h = this.hunted;
     console.warn('No data available for chart');
   }
 }
-
-// newbar
-// createChartBar() {
-//   if (this.speciesData.length > 0) {
-    
-//     const speciesNames = this.speciesData.map(data => data.species);
-//     const countsBySpecies = this.speciesData.map(data => data.count);
-
-    
-//     const years = Array.from({ length: 10 }, (_, i) => (2020 + i).toString());
-
-    
-//     const seriesData: Highcharts.SeriesLineOptions[] = speciesNames.map((species, index) => {
-//       return {
-//         name: species,
-//         type: 'line',
-//         data: countsBySpecies.map((count, idx) => [years[idx], count])
-//       };
-//     });
-
-   
-//     const chartOptions: Highcharts.Options = {
-//       title: {
-//         text: 'Species Count Over Years'
-//       },
-//       xAxis: {
-//         title: {
-//           text: 'Year'
-//         },
-//         categories: years
-//       },
-//       yAxis: {
-//         title: {
-//           text: 'Count'
-//         }
-//       },
-//       series: seriesData
-//     };
-
-    
-//     this.chart = Highcharts.chart('containerbar', chartOptions);
-
-//   } else {
-//     console.warn('No data available for chart');
-//   }
-// }
-
-
-
-
-
-
-
-
-
-
 
 
 createChartline() {

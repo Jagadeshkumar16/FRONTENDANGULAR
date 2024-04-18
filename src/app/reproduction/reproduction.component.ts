@@ -12,28 +12,13 @@ export class ReproductionComponent {
   selectedWeatherType: string = '';
   message: any;
   isLoading:boolean=false;
-  // getOptions(organismType: string): string[] {
-  //   switch (organismType) {
-  //     case 'Land':
-  //       return this.landOptions;
-  //     case 'Aquatic':
-  //       return this.aquaticOptions;
-  //     case 'Herbivorous':
-  //       return this.herbivorousOptions;
-  //     case 'Carnivorous':
-  //       return this.carnivorousOptions;
-  //     case 'Omnivorous':
-  //       return this.omnivorousOptions;
-  //     default:
-  //       return [];
-  //   }
-  // }
+  
   constructor(private planetService:PlanetService){}
   ngOnInit(){
     this.getAllorganism();
   }
   reproductionOrganism(){
-    // this.isLoading=true;
+  
     const reproduce={
       species:this.selectedWeatherType
     }
@@ -47,12 +32,11 @@ export class ReproductionComponent {
         this.getAllorganism();
         if (response && response['message'] === 'success') {
           this.message = 'Logged in successfully';
-          // this.isLoading=false;
-          // this.routes.navigate(['/planethome']);
+          
         }
       },
       (error: any) => {
-        console.error(error); // Handle error response
+        console.error(error); 
       }
     );
   }

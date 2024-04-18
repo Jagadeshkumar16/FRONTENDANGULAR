@@ -9,20 +9,20 @@
          
         <div class="row align-items-cneter justify-content-center">
           
-          <div class="col-md-3">
-            <div class="form-group">
-            <mat-form-field class="custom-mat-select " appearance="outline">
-                <mat-label>organismType</mat-label>
-              <mat-select id="organismType" [(ngModel)]="selectedOrganism" name="selectedOrganism">
-                <mat-option value="Human">Human</mat-option>
-                <mat-option value="Lion">Lion</mat-option>
-                <mat-option value="Cow">Cow</mat-option>
-                <mat-option value="Parrot">Parrot</mat-option>
-              </mat-select>
-            </mat-form-field>
-            </div>
-          </div>
-        
+                    <div class="col-md-3">
+                      <div class="form-group">
+                      <mat-form-field class="custom-mat-select " appearance="outline">
+                          <mat-label>organismType</mat-label>
+                        <mat-select id="organismType" [(ngModel)]="selectedOrganism" name="selectedOrganism">
+                          <mat-option value="Human">Human</mat-option>
+                          <mat-option value="Lion">Lion</mat-option>
+                          <mat-option value="Cow">Cow</mat-option>
+                          <mat-option value="Parrot">Parrot</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                      </div>
+                    </div>
+                  
    
        
           
@@ -72,7 +72,6 @@
                     <img src="https://i.ytimg.com/vi/PH-r6T9SAHM/maxresdefault.jpg">
                   </div>
                   <div class="col-md-9" *ngIf="zebra">
-                    <!-- <span>Hydration :{{ lionhydrationLevel }} %</span> -->
                     <div>Food Item:{{zebra}} eaten</div>
                     <img src="https://media.giphy.com/media/13Ub6gemozAiSk/giphy.gif">
                   </div>
@@ -82,7 +81,6 @@
                     <img src="https://i.makeagif.com/media/4-12-2017/5VWDNQ.gif">
                   </div>
                   <div class="col-md-9" *ngIf="deer">
-                    <!-- <span>Hydration :{{ lionhydrationLevel }} %</span> -->
                     <div>Food Item:{{deer}} eaten</div>
                     <img src="https://i.makeagif.com/media/9-03-2015/uSF_6v.gif">
                   </div>
@@ -92,12 +90,10 @@
                     <img src="https://www.investorschampion.com/images/cow-drinking-lake-cattle-animal-rural-water.jpg">
                   </div>
                   <div class="col-md-9" *ngIf="grass">
-                    <!-- <span>Hydration :{{ lionhydrationLevel }} %</span> -->
                     <div>Food Item:{{grass}} eaten</div>
                     <img src="https://i.giphy.com/17NA36aAT8WBxdodnu.webp">
                   </div>
                   <div class="col-md-9" *ngIf="Milk">
-                    <!-- <span>Hydration :{{ lionhydrationLevel }} %</span> -->
                     <div>{{Milk}}</div>
                     <img src="https://bestanimations.com/Animals/Mammals/Bulls&Cows/cow-animation-3.gif">
                   </div>
@@ -107,12 +103,10 @@
                     <img src="https://images.hive.blog/0x0/https://files.peakd.com/file/peakd-hive/shrazi/9c0j8dg3-waterforbirds.gif">
                   </div>
                   <div class="col-md-9" *ngIf="fly">
-                    <!-- <span>Hydration :{{ lionhydrationLevel }} %</span> -->
                     <div>Action :{{fly}}</div>
                     <img src="https://c.tenor.com/XZ5Quakho2sAAAAC/tenor.gif">
                   </div>
                   <div class="col-md-9" *ngIf="fruits">
-                    <!-- <span>Hydration :{{ lionhydrationLevel }} %</span> -->
                     <div>Action :{{fruits}}</div>
                     <img src="https://th.bing.com/th/id/R.b695a402fe19e64fec9641029c6bbd01?rik=b1sZ9wTYkWu3iw&riu=http%3a%2f%2fimg2.joyreactor.com%2fpics%2fpost%2fgif-bird-eat-cherry-871989.gif&ehk=91GctrelCyQ6XWBkz9xdmraR1Joi%2blmDSWlgCWPEACs%3d&risl=&pid=ImgRaw&r=0">
                   </div>

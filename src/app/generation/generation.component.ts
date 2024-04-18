@@ -1,10 +1,7 @@
 import { Component } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { PlanetService } from '../planet.service';
-// export interface Organism {
-//   name: string;
-//   generation: number;
-// }
+
 import * as Highcharts from 'highcharts';
 @Component({
   selector: 'app-generation',
@@ -17,9 +14,7 @@ export class GenerationComponent {
   speciesData: { species: string; count: number; }[] = [];
   organisms: any[] = [];
   organismCount: number = 0;
-  // displayName='graph';
   chart: any; 
-  // Chart properties
   public barChartOptions: any = {
     scaleShowVerticalLines: false,
     responsive: true
@@ -35,9 +30,6 @@ export class GenerationComponent {
 
   ngOnInit() {
     this.getAllorganism();
-    // const chartData = this.speciesData.map(d => ({ name: d.species, y: d.count }));
-    
-  
   }
 
   getAllorganism() {

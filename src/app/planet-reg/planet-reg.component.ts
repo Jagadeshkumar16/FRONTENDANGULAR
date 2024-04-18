@@ -13,7 +13,7 @@ export class PlanetRegComponent {
     email:'',
     password:'',
   }
-  // keyboard: Keyboard;
+ 
   value = "";
   message: any;
 
@@ -39,7 +39,7 @@ signUp(){
     }
   },
   (error: any) => {
-    console.error(error); // Handle error response
+    console.error(error); 
   }
 );
 }
